@@ -15,6 +15,9 @@ function findBookById(books, id) {
 }
 
 function partitionBooksByBorrowedStatus(books) {
+  function helper(newArray,array1,array2){ //HELPER FUNCTION
+  newArray.push(array1,array2);
+}
   let checkedOut = [];
   let returned = [];
   let inputs = [];
@@ -27,7 +30,7 @@ function partitionBooksByBorrowedStatus(books) {
     }
   else {returned.push(books[book]); break;}
   }
-  inputs.push(checkedOut,returned);
+  helper(inputs,checkedOut,returned);
   return inputs;
 }
 
