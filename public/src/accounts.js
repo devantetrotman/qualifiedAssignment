@@ -1,11 +1,5 @@
 function findAccountById(accounts, id) {
-  let found = {};
-  console.log("we here?");
-  for (let account in accounts){
-    if (accounts[account].id == id){
-      found = accounts[account];
-    }
-  }
+  let found = accounts.find((account) => account.id == id);
   return found;
 }
 
