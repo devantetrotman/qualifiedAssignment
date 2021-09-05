@@ -21,6 +21,8 @@ function partitionBooksByBorrowedStatus(books) {
   let checkedOut = [];
   let returned = [];
   let inputs = [];
+  let result = books.filter((book) => book.borrows.length > 1);
+  console.log(result);
   for (let book in books){
     let borrowedBooks = books[book].borrows;
     for (let borrow in borrowedBooks)
