@@ -44,13 +44,13 @@ function getMostCommonGenres(books) {
 }
 
 function getMostPopularBooks(books) {
-  let counter = {}
-  for (let book of books) {
-    counter[book.title] = book.borrows.length
-  }
-
+  const result = books.reduce((acc, book) => {
+  acc[book.title] = book.borrows.length;
+  return acc;
+}, {});
+  
   let arrayOfCounts = [];
-  for (let [key,value] of Object.entries(counter)) {
+  for (let [key,value] of Object.entries(result)) {
     arrayOfCounts.push({name: key, count: value})
     }
 
